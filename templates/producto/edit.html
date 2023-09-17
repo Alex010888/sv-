@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+{%for producto in producto %}
+
+  
+
+                <form method="post" action="/update" enctype="multipart/form-data">
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            Editar Producto
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Datos del producto</h5>
+                            <p class="card-text">
+                    <div class="form-group">
+                        <label for="txtNombre">Nombre:</label>
+                        <input id="txtNombre" value="{{producto[1]}}" class="form-control" type="text" name="txtNombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtPrecio">Precio:</label>
+                        <input id="txtPrecio"  value="{{producto[2]}}" class="form-control" type="text" name="txtPrecio">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCat">Categoria:</label>
+                        <input id="txtCat"  value="{{producto[4]}}" class="form-control" type="text" name="txtCat">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtFoto">Foto:</label>
+                        <img class="img-thumbnail" width="100" src="{{url_for('uploads',nombreFoto=producto[3])}}" alt="">
+                        <input id="txtFoto" class="form-control" type="file" name="txtFoto">
+                    </div>
+                   <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Agregar">
+                  <a href="{{url_for('index')}}" class="btn btn-primary">Regresar</a>   
+                </div>
+                    
+                    <input type="hidden" value="{{producto[0]}}" name="txtID" id="txtID">
+                    
+                </p>
+            </div>
+        </div>
+     </form>
+
+
+        
+    
+
+{% endfor %}
+{% include 'footer.html' %}
