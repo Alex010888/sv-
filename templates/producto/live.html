@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+<div class="container search-table">
+    <p><h2 align="center">Buscador de productos</h2></p>
+                <div class="search-box">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Buscar todos los produtos</h5>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" name="search_text"
+                             id="search_text" class="form-control" 
+                             placeholder="Escribir el nombre de pan">
+                        </div> 
+                    </div>
+                </div>
+       <div id="result"></div>
+    </div>
+    <style>
+    .search-table{
+        padding: 10%;
+        margin-top: -6%;
+    }
+    .search-box{
+        background: #c1c1c1;
+        border: 1px solid #ababab;
+        padding: 3%;
+    }
+    .search-box input:focus{
+        box-shadow:none;
+        border:2px solid #eeeeee;
+    }
+    .search-list{
+        background: #fff;
+        border: 1px solid #ababab;
+        border-top: none;
+    }
+    .search-list h3{
+        background: #eee;
+        padding: 3%;color:#fe6f41;
+        margin-bottom: 0%;
+    }
+    </style>
+    {% include 'footer.html' %}
